@@ -7,14 +7,15 @@
 %% Parameters
 
 % This must be an audio file readable by Matlab audioread function
-fileName = 'Marimba.wav';
+inputFile = 'Marimba.wav';
+outputFile = 'output.wav';
 
 
 
 %% Read input file
 
-[inputData, sampleRate] = audioread(fileName);
-inputData = mean(inputData,2); % downmix to mono
+[inputData, sampleRate] = audioread(inputFile);
+inputData = mean(inputData,2); % downmix to mono if neede
 inputTime = (0:length(inputData)-1)/sampleRate;
 
 figure(1);
@@ -45,7 +46,7 @@ outputData = inputData;
 
 %% Save output
 
-audiowrite('output.wav',outputData, sampleRate);
+audiowrite(outputFile,outputData, sampleRate);
 soundsc(outputData,sampleRate);
 figure(2);
 outputTime = (0:length(outputData)-1)/sampleRate;

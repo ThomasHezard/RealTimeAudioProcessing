@@ -5,10 +5,11 @@ set(CMAKE_C_STANDARD 99)
 set(CMAKE_CXX_STANDARD 11)
 
 set(SRCS
-        main.cpp
-        audio_processor.cpp)
+        sources/main.cpp
+        sources/audio_processor.cpp)
 
 set(HDRS
-        audio_processor.h)
+        sources/audio_processor.h
+        external/AudioFile.h)
 
 add_executable(OfflineAudioProcessor ${SRCS} ${HDRS})

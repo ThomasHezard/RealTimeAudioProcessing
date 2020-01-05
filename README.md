@@ -1,5 +1,7 @@
 
-# Student project : Real time audio processing on mobile platforms
+# Real time audio processing on mobile platforms
+
+#### An introductory project to the wonderful world of real-time audio processing programming on mobile platforms.
 
 ---
 
@@ -41,52 +43,18 @@ The main objective here is to work on real-time audio processing algorithms in `
 
 ### Softwares
 
-- The Matlab version of S1 simply requires __Matlab__. No specific library is necessary, unless you need some for the implementation of your algorithm.
-- The Python version of S1 requires __Python >=3.6, numpy and scipy__, and all the other libraries you may want to use for the implementation of your algorithm. You can use __whatever Python editor you'd like__ (IDLE, Spyder, VSCode, Atom, PyCharm etc.).
-- S2 requires any __C++ compiler__ (__g++ or clang++__ for example), and any __code editor__. Use of a debugger -__gdb__ for example- is strongly recommended but not necessary. Feel free to use you favorite __C++ IDE__ (VSCode, Atom, Eclipse, Code::Blocks, Geany, CLion, Visual Studio, XCode, etc.).
+- The Matlab version of S1 simply requires __Matlab__. No specific toolbox is necessary, unless you need some for the implementation of your algorithm.
+- The Python version of S1 requires __Python >=3.7, numpy and scipy__, and all the other libraries you may want to use for the implementation of your algorithm. A pre-configured online environment is available on __[repl.it](https://repl.it/)__ and only requires a web browser. If you prefer to work on your own environment, you can use __whatever Python editor you'd like__ (IDLE, Spyder, VSCode, Atom, PyCharm etc.).
+- For S2, a pre-configured online environment is available on __[repl.it](https://repl.it/)__ and only requires a web browser. If you prefer to work on your own environment, S2 requires either __cmake and make__ or any __C++ compiler__ (__g++ or clang++__ for example), and any __code editor__. Use of a debugger -__gdb__ for example- is strongly recommended but not necessary. Feel free to use you favorite __C++ IDE__ (VSCode, Atom, Eclipse, Code::Blocks, Geany, CLion, Visual Studio, XCode, etc.).
 - The Android version of S3 requires [__Android Studio__](https://developer.android.com/studio/) with __Android API 27, CMake 3.6, Android SDK Tools and Android NDK 18.1__ (stick to these specific versions).
 - The iOS version of S3 requires [__Xcode__](https://developer.apple.com/xcode/) and an __[Apple Developer account](https://developer.apple.com/account/)__.
 
 
-## Example audio files: `Sounds` folder
+## Example audio files
 
-In order to simplify the platform-agnostic implementation and get rid of the WAV files decoding and encoding, you'll use "RAW audio" files. Unlike WAV files, which contain a header describing the audio and binary format, RAW audio files only contain series of numbers, and it is necessary to know the format in advance in order to read it correctly. In this project, all RAW audio files are encoded as PCM, mono, float-32 with a sample rate of 44100 Hz.
-
-### Python scripts
-
-Two python scripts are provided to convert between WAV and RAW audio files with the encoding described above.
-
-You can convert `FILE.wav` to `FILE.pcm` with the following command:
-```
-python wavTOpcmf32.py FILE.wav FILE.pcm
-```
-
-You can convert `FILE.pcm` to `FILE.wav` with the following command:
-```
-python pcmf32TOwav.py FILE.pcm FILE.wav
-```
-
-### ffmpeg
-
-Conversion between RAW and WAV audio formats is easily done with the CLI freeware `ffmpeg`, but you have to explicitly set the endianness of the RAW file.  
-Let's suppose you have a RAW audio file `FILE.pcm`, encoded with the parameters described above, with a little-endian representation. You can convert it to a WAV file with the following command:
-```
-ffmpeg -f f32le -ar 44100 -ac 1 -i FILE.pcm FILE.wav
-```
-For a big-endian file, just replace `f32le` by `f32be`.
-
-The reverse conversion is done with the following command:
-```
-ffmpeg -i FILE.wav -f f32le -acodec pcm_f32le FILE.pcm
-```
-Again, simply replace `f32le` by `f32be` for a big-endian representation.
-
-To know your system's native endianness, run the following command:
-
-- on Linux: `lscpu | grep "Byte Order"`
-- on macOS: `sysctl hw | grep "byteorder"`
-- on Windows: it should be little-endian, you can check with Python,
-- with Python (any system): `python -c "import sys; print sys.byteorder"`
+In order to simplify the platform-agnostic implementation and get rid of the audio decoding and encoding, you'll use WAV audio files throughout this project.  
+Some audio file examples are provided in the [`Sounds`](Sounds) directory. All WAV files are mono with a sample rate of 44100 Hz.  
+Feel free to use these or your own audio files to test your code.
 
 
 ## Preliminary step: Choice of the audio effect and bibliography
@@ -109,48 +77,29 @@ Before starting step 1, you need to choose an algorithm and study it by finding 
 
 ## S1. Prototyping : `S1-Matlab_AudioProcessor` / `S1-Python_AudioProcessor`
 
-The goal of this first step if the try and test your algorithm. Both Matlab and Python let you implement and test algorithms quickly, with few lines of code. You can test several version until you obtain satisfying audio results.
+The goal of this first step if the try and test your algorithm. Both Matlab and Python let you implement and test audio processing algorithms quickly, with very few lines of code. You can test and improve your algorithm until you obtain satisfying audio results.
 
 Two scripts `audio_processor.m` and `audio_processor.py` are provided, as long as some audio files (see above).  
 For the moment, the scripts simply copy the content of the input audio file to the output audio file without any modification.
 
 What you have to do in this step is to add your processing algorithm in the script where indicated to modify the audio data.  
-Check the results, and proceed to the next step when you are satisfied.
+Check the results, and proceed to the next step when you are satisfied.  
+
+If you want to work with Matlab, please refer to the [README.md file](S1-Matlab_AudioProcessor/README.md) inside the `S1-Matlab_AudioProcessor` directory.  
+If you want to work with Python, please refer to the [README.md file](S1-Python_AudioProcessor/README.md) file of the `S1-Python_AudioProcessor` directory.  
 
 
 ## S2. C++ Implementation: `S2-OfflineAudioProcessor`
 
 During this second step, your goal is to translate the final algorithm of the previous step in platform-agnostic, real-time-compatible C++ code. In order to simplify this task, you will do this in the most simple context: a CLI program called `OfflineAudioProcessor`.  
-The project structure is already established, and the provided program does the following:
 
-- open a RAW audio file and read it,
-- apply some audio processing to the data,
-- write the modified data in a RAW audio file.
-
-This program is not real-time, but the provided architecture is compatible with real-time constraints.
-
-The proposed architecture contains a class named `AudioProcessor`, defined and implemented in the files `audio_processor.h` and `audio_processor.cpp`. This class is used in the main function - `main.cpp` - as follows:
-
-- construction of an instance of `AudioProcessor` at the beginning of the program: `main.cpp` line 30,
-- processing inside an audio process loop: `main.cpp` line 39,
-- destruction of the instance at the end of the program: `main.cpp` line 48.
-
-Details of how to build and run `OfflineAudioProcessor` are given in its `README.md` file.
-
-As in step 1, the provided version of `OfflineAudioProcessor` does nothing more than copying input data into output data. Your objective for this step is to modify the `AudioProcessor` class in files `audio_processor.h` and `audio_processor.cpp`, so that it performs the audio processing algorithm you implemented in the previous step. What you need to do is:
-
-- adapt the definition of the `AudioProcessor` class with all the needed member variables (memory buffer, parameters, etc.),
-- adapt its constructor and destructor and, if needed, the call to the constructor in the main function,
-- adapt its `Process` function's implementation (you shouldn't have to modify its declaration).
-
-Once your modifications are completed and functional, you need to design and implement tests to check that the results are exactly the same as in the previous step.
-
+Please refer to the [README.md file](S2-OfflineAudioProcessor/README.md) inside the `S2-OfflineAudioProcessor` directory for detailed explanation.
 
 ## S3. Integration inside a mobile application: `S3-Android_AudioLoop` / `S3-iOS_AudioLoop`
 
 The final step aims at integrate the algorithm in a mobile application. More precisely, you will directly integrate the `AudioProcessor` class, the one you modified in the previous step, in a simple application called `AudioLoop`.
 
-`AudioLoop` is a simple example of audio real-time application: it captures the audio input of the device, apply a real-time process on the data, and send the modified audio data to the audio output. Two sample applications for iOS and Android are provided inside the directories `S3-Android_AudioLoop` et `S3-iOS_AudioLoop`.
+`AudioLoop` is a simple example of audio real-time application: it captures the audio input of the device, apply a real-time process on the data, and send the modified audio data to the audio output. Two sample applications for iOS and Android are provided inside the directories [`S3-Android_AudioLoop`](S3-Android_AudioLoop) et [`S3-iOS_AudioLoop`](S3-iOS_AudioLoop).
 
 The `AudioProcessor` model is a bit different in this step.
 
@@ -159,12 +108,15 @@ The `AudioProcessor` model is a bit different in this step.
 
 You can now modify the files `audio_processor.h` and `audio_processor.cpp` to replicate the modifications you did in the previous step. You can find them in the following directories:
 
-- Android: `S3-Android_AudioLoop/app/src/main/cpp/`,
-- iOS: `S3-iOS_AudioLoop/Classes`.
+- Android: [`S3-Android_AudioLoop/app/src/main/cpp/`](S3-Android_AudioLoop/app/src/main/cpp),
+- iOS: [`S3-iOS_AudioLoop/AudioLoop/Classes`](S3-iOS_AudioLoop/AudioLoop/Classes).
 
 Then, if it is necessary, don't forget to modify the call of the `AudioProcessor` constructor:
 
-- Android: `S3-Android_AudioLoop/app/src/main/cpp/audio_player.cpp` line 193,
-- iOS: `S3-iOS_AudioLoop/AudioLoop/Classes/AUAudioProcessor.mm` line 79.
+- Android: [`S3-Android_AudioLoop/app/src/main/cpp/audio_player.cpp line 193`](S3-Android_AudioLoop/app/src/main/cpp/audio_player.cpp#L193),
+- iOS: [`S3-iOS_AudioLoop/AudioLoop/Classes/AUAudioProcessor.mm line 79`](S3-iOS_AudioLoop/AudioLoop/Classes/AUAudioProcessor.mm#L79).
 
-Instructions to build and run the apps are provided in each project's `README.md` file.
+
+Detailed information and instructions to build and run the apps are provided in each project's `README.md` file :
+- Android - [README.md](S3-Android_AudioLoop/README.md)
+- iOS - [README.md](S3-iOS_AudioLoop/README.md)

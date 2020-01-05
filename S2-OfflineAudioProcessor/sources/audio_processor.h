@@ -2,8 +2,8 @@
 // Created by Thomas Hezard on 2019/01/28
 //
 
-#ifndef AUDIO_ECHO_AUDIO_PROCESSOR_H
-#define AUDIO_ECHO_AUDIO_PROCESSOR_H
+#ifndef OFFLINE_AUDIO_PROCESSOR_AUDIO_PROCESSOR_H
+#define OFFLINE_AUDIO_PROCESSOR_AUDIO_PROCESSOR_H
 
 
 class AudioProcessor {
@@ -11,16 +11,16 @@ class AudioProcessor {
     public:
 
     // Constructors and destructors
-    AudioProcessor(float gain);
+    AudioProcessor();
     ~AudioProcessor() = default;
 
     // Process
-    void Process(float * io_buffer, int number_frames);
+    void Process(float* input_buffer, float* output_buffer, int number_frames);
 
     private:
     // persistent data members
     // ex: float        sampleRate;
-    float gain_;
+    //
     // pre-allocated memory
     // ex: | float *    memoryBuffer;
     //     | int        memoryBufferLength;
@@ -28,4 +28,4 @@ class AudioProcessor {
 };
 
 
-#endif //AUDIO_ECHO_AUDIO_PROCESSOR_H
+#endif //OFFLINE_AUDIO_PROCESSOR_AUDIO_PROCESSOR_H

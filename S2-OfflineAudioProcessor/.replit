@@ -1,0 +1,2 @@
+language = "cpp"
+run = "mkdir -p build && cd build && cmake .. && make && ./OfflineAudioProcessor ../Marimba.wav ../output.wav"

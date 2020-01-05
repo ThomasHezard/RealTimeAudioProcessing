@@ -2,8 +2,8 @@
 // Created by Thomas Hezard on 2019/01/28
 //
 
-#ifndef AUDIO_ECHO_AUDIO_PROCESSOR_H
-#define AUDIO_ECHO_AUDIO_PROCESSOR_H
+#ifndef IOS_AUDIO_PROCESSOR_AUDIO_PROCESSOR_H
+#define IOS_AUDIO_PROCESSOR_AUDIO_PROCESSOR_H
 
 
 #import <atomic>
@@ -40,4 +40,4 @@ class AudioProcessor {
 };
 
 
-#endif //AUDIO_ECHO_AUDIO_PROCESSOR_H
+#endif //IOS_AUDIO_PROCESSOR_AUDIO_PROCESSOR_H

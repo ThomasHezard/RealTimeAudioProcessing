@@ -11,8 +11,8 @@ AudioProcessor integration
 --------------------------
 
 - An instance of `AudioProcessor` has been inserted inside the main audio render loop.
-- Source files are located in `app/src/main/cpp/audio_processor.*`.  
-- If you need to change the call to `AudioProcessor` constructor you can do so in `app/src/main/cpp/audio_player.cpp`, line 193.
+- Source files are located in [`app/src/main/cpp/audio_processor.*`](app/src/main/cpp).  
+- If you need to change the call to `AudioProcessor` constructor you can do so in [`app/src/main/cpp/audio_player.cpp` line 193](app/src/main/cpp/audio_player.cpp#L193).
 - The two sliders are limited to the range `[0,1]` and values are sent continuously to the `AudioProcessor` with param IDs `0` and `1`.
 
 
