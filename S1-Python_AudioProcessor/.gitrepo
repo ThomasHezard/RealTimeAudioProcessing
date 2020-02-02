@@ -6,7 +6,7 @@
 [subrepo]
 	remote = git@github.com:AudioScientist/RealTimeAudioProcessingOnMobilePlatformsStep1Python.git
 	branch = master
-	commit = 
+	commit = 7d114d76aae033e4a11aea591fdc62792bf8d269
 	method = merge
 	cmdver = 0.4.0
-	parent = 
+	parent = b3acffd8e72347deae332ffb4f7a693fe9c7a13f
