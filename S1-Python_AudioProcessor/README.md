@@ -32,8 +32,7 @@ Your goal is to implement modify this script to replace the data copy with the a
 
 ### Run it on repl.it
 
-This project can be run in a pre-configured environment on repl.it:  
-[![Run on Repl.it](https://repl.it/badge/github/AudioScientist/RealTimeAudioProcessingOnMobilePlatformsStep1Python)](https://repl.it/github/AudioScientist/RealTimeAudioProcessingOnMobilePlatformsStep1Python)
+This project can be run in a pre-configured environment on repl.it: [Run on Repl.it](https://repl.it/@AudioScientist/RealTimeAudioProcessingOnMobilePlatformsStep1Python)
 
 ### Setup your environment
 
