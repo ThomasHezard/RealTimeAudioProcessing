@@ -56,9 +56,8 @@ Once your modifications are completed and functional, you need to design and imp
 
 ### Compile and run on repl.it
 
-This project can be compiled and run in a pre-configured environment on repl.it:  
-[![Run on Repl.it](https://repl.it/badge/github/AudioScientist/RealTimeAudioProcessingOnMobilePlatformsStep2)](https://repl.it/github/AudioScientist/RealTimeAudioProcessingOnMobilePlatformsStep2)  
-Clicking the `Run` button will compile the project, and run it to read the audio file `Marimba.wav`, process its audio data, and write the resulting audio data in the audio file `output.wav`.
+This project can be compiled and run in a pre-configured environment on repl.it: [Run on Repl.it](https://repl.it/@AudioScientist/RealTimeAudioProcessingOnMobilePlatformsStep2).  
+Clicking the `Run` button will compile the project, and run it to read the audio file `Marimba.wav`, process its audio data, and write the resulting audio data in the audio file `output.wav`.  
 
 ### Compile out-of-source with `CMake` and `make`
 
