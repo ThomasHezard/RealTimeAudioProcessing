@@ -26,7 +26,7 @@ xlabel('time (seconds)');
 ylabel('amplitude');
 
 soundsc(inputData,sampleRate);
-pause(length(inputData)/sampleRate);
+pause(length(inputData)/sampleRate + 0.1);
 
 
 

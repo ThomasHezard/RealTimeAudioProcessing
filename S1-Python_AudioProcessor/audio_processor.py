@@ -39,5 +39,5 @@ output_data = input_data
 
 # Save output
 # ***********
-
+output_data = 0.99 * output_data / max(abs(output_data))
 wavfile.write(output_file, int(fs), output_data)
