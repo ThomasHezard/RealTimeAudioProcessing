@@ -6,6 +6,7 @@
 [subrepo]
 	remote = git@github.com:ThomasHezard/RealTimeAudioProcessing-Step2OfflineCPP.git
 	branch = main
-	commit = 
+	commit = 32403fe5fa9013e293b31e72e7ed24ed646c97fd
 	method = merge
 	cmdver = 0.4.3
+	parent = 538fc34d50acabe8036563798b9144d0336e5503
