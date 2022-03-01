@@ -54,9 +54,9 @@ Once your modifications are completed and functional, you need to design and imp
 
 ## Compilation and run instructions
 
-### Compile and run on repl.it
+### Compile and run on replit
 
-This project can be compiled and run in a pre-configured environment on repl.it: [Run on Repl.it](https://repl.it/@AudioScientist/RealTimeAudioProcessingOnMobilePlatformsStep2).  
+This project can be compiled and run in a pre-configured environment on replit: [Run on replit](https://replit.com/@ThomasHezard/RealTimeAudioProcessing-Step2OfflineCPP).  
 Clicking the `Run` button will compile the project, and run it to read the audio file `Marimba.wav`, process its audio data, and write the resulting audio data in the audio file `output.wav`.  
 
 ### Compile out-of-source with `CMake` and `make`

@@ -30,9 +30,9 @@ Your goal is to implement modify this script to replace the data copy with the a
 
 ## Python environment
 
-### Run it on repl.it
+### Run it on replit
 
-This project can be run in a pre-configured environment on repl.it: [Run on Repl.it](https://repl.it/@AudioScientist/RealTimeAudioProcessingOnMobilePlatformsStep1Python).  
+This project can be run in a pre-configured environment on replit: [Run on replit](https://replit.com/@ThomasHezard/RealTimeAudioProcessing-Step1Python).  
 Clicking the `Run` button will run the script `audio_processor.py`, which reads the audio file `Marimba.wav`, processes its audio data, and writes the resulting audio data in the audio file `output.wav`.  
 
 ### Setup your environment
