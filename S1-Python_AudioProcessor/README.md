@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This project is the step 1 of the main project [Real-time audio processing on mobile platforms](https://gitlab.com/AudioScientist/real-time-audio-processing-on-mobile-platforms) written for Python. Please refer to the README of main project for more information.
+This project is the step 1 of the main project [Real-time audio processing](https://github.com/ThomasHezard/RealTimeAudioProcessing) written for Python. Please refer to the README of main project for more information.
 
 --- 
 
@@ -38,11 +38,11 @@ Clicking the `Run` button will run the script `audio_processor.py`, which reads 
 ### Setup your environment
 
 This project has been written for Python 3.7, necessary packages are detailed in `requirements.txt`.  
-For example, you can install all necessary packages with `conda` : 
-```
-conda install --file requirements.txt
-```
-or `pip` : 
+For example, you can install all necessary packages with `pip`: 
 ```
 pip install -r requirements.txt
+```
+or `conda`: 
+```
+conda install --file requirements.txt
 ```
