@@ -51,14 +51,15 @@ All the files you will have to modify are located inthe [`sources/audio_engine`]
 ## AudioProcessor integration
 
 An instance of `AudioProcessor` has been inserted inside the main audio render loop.  
-Source files are located in [`sources/audio_processor/audio_processor.*`](sources/audio_processor).  
+Source files are located in [`sources/audio_engine/audio_processor.*`](sources/audio_processor).  
 `AudioProcessor` is used the following way:
-  - Instanciation of the `AudioProcessor` inside the `audio_processor_` variable of `AudioEngine` in [`sources/audio_engine.cpp` line 15](sources/audio_engine.cpp#L15).
-  - Call of the `Prepare` function in [`sources/audio_engine.cpp` line 22](sources/audio_engine.cpp#L22).
-  - Call of the `Process` function in [`sources/audio_engine.cpp` line 36](sources/audio_engine.cpp#L36).
+  - Instanciation of the `AudioProcessor` inside the `audio_processor_` variable of `AudioEngine` in [`sources/audio_engine/audio_engine.cpp` line 15](sources/audio_engine/audio_engine.cpp#L15).
+  - Call of the `Prepare` function in [`sources/audio_engine/audio_engine.cpp` line 22](sources/audio_engine/audio_engine.cpp#L22).
+  - Call of the `Process` function in [`sources/audio_engine/audio_engine.cpp` line 36](sources/audio_engine/audio_engine.cpp#L36).
 
 For the moment, `AudioProcessor` do not have any parameters, and the controllers from UI are linked to two variables from `AudioEngine`: `parameter_a_` and `parameter_b_`.   
 If you want to link these paramaters to your `AudioProcessor`, you have to modify the following code:
-  - Setters and getters for the parameters in [`sources/audio_engine.cpp` lines 42](sources/audio_engine.cpp#L42), [47](sources/audio_engine.cpp#L47), [52](sources/audio_engine.cpp#L52) and [57](sources/audio_engine.cpp#L57).
+  - Setters and getters for the parameters in [`sources/audio_engine/audio_engine.cpp` lines 42](sources/audio_engine/audio_engine.cpp#L42), [47](sources/audio_engine/audio_engine.cpp#L47), [52](sources/audio_engine/audio_engine.cpp#L52) and [57](sources/audio_engine/audio_engine.cpp#L57).
   - The controllers have a range of `[0,1]` with a mid value of `0.5`. You can either
-    - change these values in [`main_screen.cpp` lines 18-19](main_screen.cpp#L18) and [37-38](main_screen.cpp#L37)
+    - change these values in [`main_screen.cpp` lines 18-19](sources/main_screen.cpp#L18) and [37-38](sources/main_screen.cpp#L37),
+    - or transform this `[0,1]` range into usefull values within your `AudioProcessor` class (recommended).

@@ -2,7 +2,7 @@
 
 #include <JuceHeader.h>
 #include "main_screen.h"
-#include "audio_engine.h"
+#include "audio_engine/audio_engine.h"
 
 //==============================================================================
 /*

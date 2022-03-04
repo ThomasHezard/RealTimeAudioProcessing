@@ -10,7 +10,7 @@
 
 #pragma once
 
-#include "audio_processor/audio_processor.h"
+#include "audio_processor.h"
 
 
 class AudioEngine {

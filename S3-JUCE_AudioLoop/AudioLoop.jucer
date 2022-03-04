@@ -4,14 +4,14 @@
               addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1">
   <MAINGROUP id="DswMh1" name="AudioLoop">
     <GROUP id="{49501D77-3E3B-83E8-1AE6-60357E4D1755}" name="sources">
-      <GROUP id="{CA9FE67C-0DC2-FD61-8E61-31C6E396178C}" name="audio_processor">
-        <FILE id="SCexoM" name="audio_engine.cpp" compile="1" resource="0"
-              file="sources/audio_processor/audio_engine.cpp"/>
-        <FILE id="wPS5dY" name="audio_engine.h" compile="0" resource="0" file="sources/audio_processor/audio_engine.h"/>
-        <FILE id="ca0Zu6" name="audio_processor.cpp" compile="1" resource="0"
-              file="sources/audio_processor/audio_processor.cpp"/>
-        <FILE id="b68Cq1" name="audio_processor.h" compile="0" resource="0"
-              file="sources/audio_processor/audio_processor.h"/>
+      <GROUP id="{150546AF-5784-31FF-43BF-CFA08EB454FC}" name="audio_engine">
+        <FILE id="zRI6Rk" name="audio_engine.cpp" compile="1" resource="0"
+              file="sources/audio_engine/audio_engine.cpp"/>
+        <FILE id="Opbjut" name="audio_engine.h" compile="0" resource="0" file="sources/audio_engine/audio_engine.h"/>
+        <FILE id="yuDlJq" name="audio_processor.cpp" compile="1" resource="0"
+              file="sources/audio_engine/audio_processor.cpp"/>
+        <FILE id="gvsPxG" name="audio_processor.h" compile="0" resource="0"
+              file="sources/audio_engine/audio_processor.h"/>
       </GROUP>
       <FILE id="cUOPSV" name="main.cpp" compile="1" resource="0" file="sources/main.cpp"/>
       <FILE id="WVG4nj" name="main_component.cpp" compile="1" resource="0"
