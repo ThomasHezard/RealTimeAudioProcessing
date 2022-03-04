@@ -6,7 +6,7 @@
 [subrepo]
 	remote = git@github.com:ThomasHezard/RealTimeAudioProcessing-Step1Python.git
 	branch = main
-	commit = 3cdfeeb001270b2799a0188fdf780f55ef907991
+	commit = 05ed05a9432ed5b8e57034b8aedac3b069048ebb
 	method = merge
 	cmdver = 0.4.3
-	parent = 585f0b6667c31876ba2832ce342566ecca41f21f
+	parent = 573c2f08cd843d6c6039a0276ebb9f07f9a7f630
