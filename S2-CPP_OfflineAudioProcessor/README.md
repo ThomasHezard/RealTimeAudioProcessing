@@ -1,27 +1,25 @@
 # Offline Audio Processor
 
-## Introduction
-
 This project is the step 2 of the main project [Real-time audio processing](https://github.com/ThomasHezard/RealTimeAudioProcessing). Please refer to the README of main project for more information.
 
---- 
+---
 
 ## Author
 
-Thomas Hézard - Audio scientist and developer
+Thomas Hézard - Audio scientist and developer  
 www.thomashezard.com  
 thomas.hezard [at] thz.fr
 
---- 
+---
 
 ## License
 
 This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).  
 [![Licence Creative Commons](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-nc-sa/4.0/)
 
---- 
+---
 
-## Objectives
+## 🎯  Objectives
 
 Your goal is to translate the final algorithm of the previous step into platform-agnostic, real-time-compatible C++ code. In order to simplify this task, you will do this in the most simple context: a CLI program called `OfflineAudioProcessor`.  
 
@@ -54,7 +52,7 @@ Once your modifications are completed and functional, you need to design and imp
 
 ---
 
-## Compilation and run instructions
+## ⚙️  Compilation and run instructions
 
 ### Compile and run on replit
 

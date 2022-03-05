@@ -1,18 +1,16 @@
 # Offline Audio Processor
 
-## Introduction
-
 This project is the step 1 of the main project [Real-time audio processing](https://github.com/ThomasHezard/RealTimeAudioProcessing) written for Python. Please refer to the README of main project for more information.
 
---- 
+---
 
 ## Author
 
-Thomas Hézard - Audio scientist and developer
+Thomas Hézard - Audio scientist and developer  
 www.thomashezard.com  
 thomas.hezard [at] thz.fr
 
---- 
+---
 
 ## License
 
@@ -21,14 +19,15 @@ This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareA
 
 ---
 
-## Objectives
+## 🎯  Objectives
 
 This folder contains a self-sufficient Python script `audio_processor.py`. The present version of the code does nothing but copying audio data from an input audio file into an output audio file.  
+
 Your goal is to implement modify this script to replace the data copy with the audio processing algorithm you chose. All you have to do is to __replace [line 35](audio_processor.py#L35) with your code__.
 
 --- 
 
-## Python environment
+## ⚙️  Python environment
 
 ### Run it on replit
 
