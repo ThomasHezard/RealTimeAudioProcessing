@@ -27,21 +27,32 @@ Your goal is to implement modify this script to replace the data copy with the a
 
 --- 
 
-## ⚙️  Python environment
+## ⚙️  How to run
 
 ### Run it on replit
 
 This project can be run in a pre-configured environment on replit: [Run on replit](https://replit.com/@ThomasHezard/RealTimeAudioProcessing-Step1Python).  
 Clicking the `Run` button will run the script `audio_processor.py`, which reads the audio file `Marimba.wav`, processes its audio data, and writes the resulting audio data in the audio file `output.wav`.  
-
-### Setup your environment
-
-This project has been written for Python 3.7, necessary packages are detailed in `requirements.txt`.  
-For example, you can install all necessary packages with `pip`: 
+If the `Run` button does not work, go to the console and run 
+```bash
+python audio_processor.py
 ```
+
+### Run it on your computer
+
+This project has been written for `Python >= 3.7`, necessary packages are detailed in `requirements.txt`.  
+After having installed and setup `Python`, you can install all necessary packages with `pip`: 
+```bash
 pip install -r requirements.txt
 ```
 or `conda`: 
-```
+```bash
 conda install --file requirements.txt
 ```
+
+Once your environement is ready, you can execute the Python script with the command
+```bash
+python audio_processor.py
+```
+
+Alternatively, you can open this directory in your favourite Python IDE and work form there.

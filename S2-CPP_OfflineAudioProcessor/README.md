@@ -52,14 +52,16 @@ Once your modifications are completed and functional, you need to design and imp
 
 ---
 
-## ⚙️  Compilation and run instructions
+## ⚙️  How to compile and run
 
 ### Compile and run on replit
 
 This project can be compiled and run in a pre-configured environment on replit: [Run on replit](https://replit.com/@ThomasHezard/RealTimeAudioProcessing-Step2OfflineCPP).  
 Clicking the `Run` button will compile the project, and run it to read the audio file `Marimba.wav`, process its audio data, and write the resulting audio data in the audio file `output.wav`.  
 
-### Compile out-of-source with `CMake` and `make`
+### Compile and run on your computer from the command line
+
+#### Compile out-of-source with `CMake` and `make`
 
 Type the following commands from project's root:
 ```
@@ -69,7 +71,7 @@ cmake ..
 make
 ```
 
-### Compile out-of-source with `g++` or `clang++` (or any other C++ compiler)
+#### Compile out-of-source with `g++` or `clang++` (or any other C++ compiler)
 
 Type the following commands from project's root (replace `gcc++`` with your compiler if needed)
 ```
@@ -77,6 +79,10 @@ mkdir build
 cd build
 g++ -std=c++11 ../sources/main.cpp ../sources/audio_processor.cpp -o OfflineAudioProcessor
 ```
+
+### Compile and run on your computer from a Cmake or C++ IDE
+
+You can also open this directory from your favourite Cmake or C++ IDE and work form there.
 
 ### Running the compiled program
 
@@ -86,7 +92,7 @@ Once built, run the executable with the following command:
 ```
 `INPUT` must be the path to a WAV mono audio file. You can use the provided file `Marimba.wav`.  
 `OUTPUT` must be the path to a non-existing WAV audio file.  
-For example, after building with cmake, while still inside the `build` folder: 
+For example, after building with cmake, while still inside the `build` folder, you can run: 
 ```
 ./OfflineAudioProcessor ../Marimba.wav ../output.wav
 ```
