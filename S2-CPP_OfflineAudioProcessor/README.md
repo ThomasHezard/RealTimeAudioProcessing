@@ -43,7 +43,7 @@ All header and source files are located in the [`sources`](sources) directory.
 As in step 1, the provided version of `OfflineAudioProcessor` does nothing more than copying input data into output data. Your objective for this step is to modify the `AudioProcessor` class in files `audio_processor.h` and `audio_processor.cpp`, so that it performs the audio processing algorithm you implemented in the previous step. What you need to do is:
 
 - adapt the definition of the `AudioProcessor` class with all the needed member variables (memory buffer, parameters, etc.),
-- if your `AudioProcessor` needs some prior information before starting the rendering loop, like sample rate or parameter values, these information should be passed in the `Prepare` function, it is recommended to keep a constructor as simple as possible,
+- if your `AudioProcessor` needs some prior information before starting the rendering loop, like sample rate or parameter values, these information should be passed in the `Prepare` function, it is recommended to keep the constructor as simple as possible,
 - adapt its `Prepare` function and destructor and, if needed, the call to the `Prepare` function in the main function,
 - adapt its `Process` function's implementation (you shouldn't have to modify its declaration).
 

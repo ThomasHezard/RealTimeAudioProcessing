@@ -1,6 +1,6 @@
 # Offline Audio Processor
 
-This project is the step 1 of the main project [Real-time audio processing](https://github.com/ThomasHezard/RealTimeAudioProcessing) written for Python. Please refer to the README of main project for more information.
+This project is the step 1 of the main project [Real-time audio processing](https://github.com/ThomasHezard/RealTimeAudioProcessing). Please refer to the README of main project for more information.
 
 ---
 
