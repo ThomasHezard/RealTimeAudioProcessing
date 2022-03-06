@@ -56,15 +56,17 @@ The main objective here is to work on real-time audio processing algorithms in `
   - Working on Windows, you'll be able to build for
     - Windows with [__Visual Studio 2015, 2017, 2019 or 2022__](https://visualstudio.microsoft.com),
     - Android with [__Android Studio__](https://developer.android.com/studio/).
-  - Working on macOS, you'll be able to build for
+  - Working on macOS (Intel or ARM), you'll be able to build for
     - macOS and iOS with [__Xcode__](https://developer.apple.com/xcode/) and an __[Apple Developer account](https://developer.apple.com/account/)__,
     - Android with [__Android Studio__](https://developer.android.com/studio/).
   - Working on Linux, you'll be able to build for 
-    - Linux with [__make__](https://www.gnu.org/software/make/), or [__Code::Blocks__](https://www.codeblocks.org). The following installation step is needed before building the project (tested on Ubuntu 20.04)
+    - Linux with [__make__](https://www.gnu.org/software/make/) or [__Code::Blocks__](https://www.codeblocks.org),
+    - Android with [__Android Studio__](https://developer.android.com/studio/) (not fully tested).  
+  
+    On Linux, the following installation step is needed to run the Projucer and to build the project (tested on Ubuntu 20.04, Debian 10 and Debian 11, X86_64 architecture)
       ```bash
-      sudo apt install build-essential cmake make codeblocks libfreetype6-dev libx11-dev libxinerama-dev libxcursor-dev mesa-common-dev libasound2-dev freeglut3-dev libxcomposite-dev libjack-dev libxrandr-dev libcurl4-openssl-dev libwebkit2gtk-4.0-dev
+      sudo apt install make g++ libfreetype6-dev libasound2-dev libcurl4-openssl-dev libwebkit2gtk-4.0-dev
       ```
-    - Android with [__Android Studio__](https://developer.android.com/studio/) (tested on Ubuntu 20.04).
 
 
 ## 🎙️ Example audio files
