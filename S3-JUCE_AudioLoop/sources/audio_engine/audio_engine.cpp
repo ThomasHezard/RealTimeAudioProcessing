@@ -33,7 +33,7 @@ void AudioEngine::processAudioData(float **ioAudioData, int inputNumChannels, in
     assert(inputNumChannels == 1);
     assert(outputNumChannels == 2);
     
-    audio_processor_.Process(ioAudioData[0], ioAudioData[1], numSamples);
+    audio_processor_.Process(ioAudioData[0], ioAudioData[0], numSamples);
     memcpy(ioAudioData[1], ioAudioData[0], numSamples*sizeof(float));
 }
 

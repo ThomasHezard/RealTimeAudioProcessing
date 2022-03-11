@@ -47,6 +47,8 @@ The main objective here is to work on real-time audio processing algorithms in `
   - You can run the application on __the same computer__ you are working on, but you will need at least __a mono audio input and a stereo audio output__.
   - You can run the application on an __Android device__, smartphone or tablet, with at least __a mono audio input and a stereo audio output__. 
   - You can run the application on an __iOS device__, smartphone or tablet, with at least __a mono audio input and a stereo audio output__, but you will need to work on __macOS computer__ in that case.
+  - __Headphones__, wired or bluetooth, is strongly recommended.
+  - You will have the choice to work on a project with audio input to test your audio effect on your own voice, or a project without audio input to test your audio effect on audio files. If you choose to work with audio input, you will need __a microphone__, either integrated in your computer or smartphone, or an external microphone with adaquate connection for your system (analog plug, USB microphone or USB audio interface).
 
 ### 🧑‍💻 Softwares
 
@@ -54,7 +56,7 @@ The main objective here is to work on real-time audio processing algorithms in `
 - For step 2, a pre-configured online environment is available on __[replit](https://replit.com)__ and only requires a web browser. If you prefer to work on your own environment, S2 requires either __cmake__ and __make__ or any __C++ compiler__ (__g++ or clang++__ for example), and any __code editor__. Use of a debugger -__gdb__ for example- is strongly recommended but not necessary. Feel free to use you favorite __C++ IDE__ (VSCode, Atom, Eclipse, Code::Blocks, Geany, CLion, Visual Studio, XCode, etc.).
 - Step 3 requires the [__JUCE framework__](https://juce.com), which you can get for free for personnal use. The configuration needed to build the project depends on the platform you are working on, and the platform you are building for:
   - Working on Windows, you'll be able to build for
-    - Windows with [__Visual Studio 2015, 2017, 2019 or 2022__](https://visualstudio.microsoft.com),
+    - Windows with [__Visual Studio 2015, 2017, 2019 or 2022__](https://visualstudio.microsoft.com) (with the __Desktop Development with C++__ module),
     - Android with [__Android Studio__](https://developer.android.com/studio/).
   - Working on macOS (Intel or ARM), you'll be able to build for
     - macOS and iOS with [__Xcode__](https://developer.apple.com/xcode/) and an __[Apple Developer account](https://developer.apple.com/account/)__,
@@ -122,12 +124,16 @@ During this second step, your goal is to translate the final algorithm of the pr
 
 Please refer to the [README.md file](S2-CPP_OfflineAudioProcessor/README.md) inside the [`S2-CPP_OfflineAudioProcessor`](S2-CPP_OfflineAudioProcessor) directory for detailed explanation.
 
-### 🧑‍🎤  S3. Integration inside a real-time application: [`S3-JUCE_AudioLoop`](S3-JUCE_AudioLoop)
+### 🧑‍🎤  S3. Integration inside a real-time application: [`S3-JUCE_AudioLoop`](S3-JUCE_AudioLoop) or [`S3-JUCE_AudioProcessor`](S3-JUCE_AudioProcessor)
 
-The final step aims at integrate the algorithm in a real-time application. More precisely, you will directly integrate the `AudioProcessor` class, the one you modified in the previous step, in a simple application called `AudioLoop`.
+The final step aims at integrate the algorithm in a real-time application. More precisely, you will directly integrate the `AudioProcessor` class, the one you modified in the previous step, in one of the simple applications provided: `AudioLoop` and `AudioProcessor`.
 
-`AudioLoop` is a simple example of audio real-time application: it captures the audio input of the device, apply a real-time process on the data, and send the modified audio data to the audio output. This application is developped using the [JUCE framework](https://juce.com), and can be built for macOS, Linux, Windows, iOS or Android.
+`AudioLoop` is a simple example of audio real-time application with audio input and output: it captures the audio input of the device, applies a real-time process on the data, and sends the modified audio data to the audio output. This application is developped using the [JUCE framework](https://juce.com), and can be built for macOS, Linux, Windows, iOS or Android.    
+This project requires a microphone, either integrated in your computer or smartphone, or an external microphone with adaquate connection for your system (analog plug, USB microphone or USB audio interface).    
+Also, using headphones is strongly recommended to work on this project to avoid larsen effects (audio feedback loop).   
+The JUCE project is located inside the directory [`S3-JUCE_AudioLoop`](S3-JUCE_AudioLoop).
 
-The project is located inside the directory [`S3-JUCE_AudioLoop`](S3-JUCE_AudioLoop).
+`AudioProcessor` is a simple example of audio real-time application with audio output only: it reads an audio file, applies a real-time process on the data, and sends the modified audio data to the audio output. This application is developped using the [JUCE framework](https://juce.com), and can be built for macOS, Linux or Windows.    
+The JUCE project is located inside the directory [`S3-JUCE_AudioProcessor`](S3-JUCE_AudioProcessor).
 
-Please refer to the [README.md file](S3-JUCE_AudioLoop/README.md) inside the [`S3-JUCE_AudioLoop`](S3-JUCE_AudioLoop) directory for detailed explanation.
+Please refer to the [S3-JUCE_AudioLoop/README.md file](S3-JUCE_AudioLoop/README.md) or [S3-JUCE_AudioProcessor/README.md file](S3-JUCE_AudioProcessor/README.md) for detailed explanation.
