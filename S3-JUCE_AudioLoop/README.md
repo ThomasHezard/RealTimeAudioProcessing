@@ -58,7 +58,7 @@ In order to link these paramaters to your `AudioProcessor`, you have to modify t
 
 ## ⚙️  How to build and run
 
-- Make sure [JUCE](https://juce.com) is installed on your computer with the `Projucer` app available and the global paths properly set.
+- Make sure [JUCE](https://juce.com) is installed on your computer with the `Projucer` app available and the global paths properly set. The project has been tested with JUCE 7.0.5, it is recommended to use the exact same version.
 - Depending on the platform you are working on and the platform you want to build the app for, be sure you have all the tools needed installed on your system. See the main README of the project for more information.
 - Open the [`AudioLoop.jucer`](AudioLoop.jucer) with `Projucer`.
 - Click `File -> Save Project` to export the project.

@@ -48,7 +48,7 @@ public:
     /// @param outputAudioData Audio buffer to fill, 2D array of size [numChannels, numSamples].
     /// @param numChannels Number of channels.
     /// @param numSamples Number of samples in each channel.
-    void generateAudioData(float** outputAudioData, 
+    void generateAudioData(float*const* outputAudioData, 
                            int numChannels, 
                            int numSamples);
     

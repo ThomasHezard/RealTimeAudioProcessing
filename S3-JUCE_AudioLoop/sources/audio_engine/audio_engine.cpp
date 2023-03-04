@@ -27,7 +27,7 @@ void AudioEngine::releaseResources()
     
 }
 
-void AudioEngine::processAudioData(float **ioAudioData, int inputNumChannels, int outputNumChannels, int numSamples)
+void AudioEngine::processAudioData(float *const*ioAudioData, int inputNumChannels, int outputNumChannels, int numSamples)
 {
     
     assert(inputNumChannels == 1);

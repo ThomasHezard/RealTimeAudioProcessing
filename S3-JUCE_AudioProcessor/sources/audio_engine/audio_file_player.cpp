@@ -23,7 +23,7 @@ void AudioFilePlayer::releaseResources()
     transportSource_.releaseResources();
 }
 
-void AudioFilePlayer::generateAudioData(float **channelData, int numChannels, int numSamples)
+void AudioFilePlayer::generateAudioData(float *const*channelData, int numChannels, int numSamples)
 {
     if (readerSource_.get() == nullptr)
     {

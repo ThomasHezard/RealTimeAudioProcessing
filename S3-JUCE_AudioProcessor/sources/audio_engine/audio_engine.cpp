@@ -36,7 +36,7 @@ void AudioEngine::releaseResources()
     player_.releaseResources();
 }
 
-void AudioEngine::generateAudioData(float **outputAudioData, int outputNumChannels, int numSamples)
+void AudioEngine::generateAudioData(float *const*outputAudioData, int outputNumChannels, int numSamples)
 {
     assert(outputNumChannels == 2);
     

@@ -29,7 +29,7 @@ public:
     /// @param channelData An array of pointers to the channels of the audio buffer.
     /// @param numChannels The number of channels of the audio buffer.
     /// @param numSamples The number of samples of the audio buffer.
-    void generateAudioData(float** channelData, 
+    void generateAudioData(float*const* channelData, 
                            int numChannels, 
                            int numSamples);
         

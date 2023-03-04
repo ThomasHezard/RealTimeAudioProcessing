@@ -48,7 +48,7 @@ public:
     /// @param inputNumChannels Number of input channels.
     /// @param outputNumChannels Number of output channels.
     /// @param numSamples Number of samples in each channel.
-    void processAudioData(float** ioAudioData, 
+    void processAudioData(float*const* ioAudioData, 
                           int inputNumChannels,
                           int outputNumChannels,
                           int numSamples);
