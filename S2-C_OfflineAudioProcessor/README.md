@@ -1,6 +1,6 @@
 # Offline Audio Processor
 
-This project is the step 2 of the main project [Real-time audio processing](https://github.com/ThomasHezard/RealTimeAudioProcessing). Please refer to the README of main project for more information.
+This project is the C-language version of step 2 of the main project [Real-time audio processing](https://github.com/ThomasHezard/RealTimeAudioProcessing). Please refer to the README of main project for more information.
 
 ---
 
@@ -21,7 +21,7 @@ This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareA
 
 ## 🎯  Objectives
 
-Your goal is to translate the final algorithm of the previous step into platform-agnostic, real-time-compatible C++ code. In order to simplify this task, you will do this in the most simple context: a CLI program called `OfflineAudioProcessor`.  
+Your goal is to translate the final algorithm of the previous step into platform-agnostic, real-time-compatible C code. In order to simplify this task, you will do this in the most simple context: a CLI program called `OfflineAudioProcessor`.
 
 The project structure is already established, and the provided program does the following:
 
@@ -29,9 +29,11 @@ The project structure is already established, and the provided program does the 
 - apply some audio processing to the data,
 - write the modified data in a WAV audio file (using the external library `AudioFile`).
 
-This program is not real-time, but the provided architecture is compatible with real-time constraints.  
+This program is not real-time, but the provided architecture is compatible with real-time constraints.
 
-The proposed architecture contains a class named `AudioProcessor`, defined and implemented in the files [`audio_processor.h`](sources/audio_processor.h) and [`audio_processor.cpp`](sources/audio_processor.cpp). This class is used in the main function - [`main.cpp`](sources/main.cpp) - as follows:
+NB: The main program is written in C++ for easier audio file handling, but you will only have to write C code, you do not need to know the C++ language.
+
+The proposed architecture contains a struct named `AudioProcessor` with its associated functions, defined and implemented in the files [`audio_processor.h`](sources/audio_processor.h) and [`audio_processor.c`](sources/audio_processor.c). This struct is used in the main function - [`main.cpp`](sources/main.cpp) - as follows:
 - construction of an instance of `AudioProcessor` at the beginning of the program: [`main.cpp` line 35](sources/main.cpp#L35),
 - preparation of the `AudioProcessor`: [`main.cpp` line 36](sources/main.cpp#L36),
 - processing inside an audio process loop: [`main.cpp` line 52](sources/main.cpp#L52),
@@ -39,11 +41,11 @@ The proposed architecture contains a class named `AudioProcessor`, defined and i
 
 All header and source files are located in the [`sources`](sources) directory.
 
-As in step 1, the provided version of `OfflineAudioProcessor` does nothing more than copying input data into output data. Your objective for this step is to modify the `AudioProcessor` class in files `audio_processor.h` and `audio_processor.cpp`, so that it performs the audio processing algorithm you implemented in the previous step. What you need to do is:
-- adapt the definition of the `AudioProcessor` class with all the needed member variables (memory buffer, parameters, etc.),
-- if your `AudioProcessor` needs some prior information before starting the rendering loop, like sample rate or parameter values, these information should be passed in the `Prepare` function, it is recommended to keep the constructor as simple as possible,
-- adapt its `Prepare` function and destructor and, if needed, the call to the `Prepare` function in the main function,
-- adapt its `Process` function's implementation (you shouldn't have to modify its declaration).
+As in step 1, the provided version of `OfflineAudioProcessor` does nothing more than copying input data into output data. Your objective for this step is to modify the `AudioProcessor` struct and its functions in files `audio_processor.h` and `audio_processor.c`, so that it performs the audio processing algorithm you implemented in the previous step. What you need to do is:
+- adapt the definition of the `AudioProcessor` struct with all the needed variables (memory buffer, parameters, etc.),
+- if your `AudioProcessor` needs some prior information before starting the rendering loop, like sample rate or parameter values, these information should be passed in the `prepare_audio_processor` function, it is recommended to keep the `new_audio_processor` function as simlple as possible,
+- adapt the `prepare_audio_processor` and `destroy_audio_processor` functions and, if needed, the call to `prepare_audio_processor` in the main function,
+- adapt its `ap_process` function's implementation (you shouldn't have to modify its declaration).
 
 Once your modifications are completed and functional, you can design and implement tests to check that the results are exactly the same as in the previous step.
 
@@ -54,7 +56,7 @@ Once your modifications are completed and functional, you can design and impleme
 
 ### Compile and run on replit
 
-This project can be compiled and run in a pre-configured environment on replit: [Run on replit](https://replit.com/@ThomasHezard/RealTimeAudioProcessing-Step2OfflineCPP).  
+This project can be compiled and run in a pre-configured environment on replit: [Run on replit](https://replit.com/@ThomasHezard/RealTimeAudioProcessing-Step2OfflineC).  
 Clicking the `Run` button will compile the project, and run it to read the audio file `Marimba.wav`, process its audio data, and write the resulting audio data in the audio file `output.wav`.  
 
 ### Compile and run on your computer from the command line
@@ -69,7 +71,7 @@ cmake ..
 make
 ```
 
-#### Compile out-of-source with `g++` or `clang++` (or any other C++ compiler)
+#### Compile out-of-source with `g++` or `clang++` (or any other C/C++ compiler)
 
 Type the following commands from project's root (replace `gcc++`` with your compiler if needed)
 ```

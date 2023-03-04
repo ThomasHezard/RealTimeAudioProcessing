@@ -26,18 +26,19 @@ The goal of this project is to implement a real-time audio signal processing app
 You will follow the usual steps of such a project:  
 - Preliminary step: choice of an audio effect and bibliography.
 - S1. Prototyping the audio processing algorithm with `Python`.
-- S2. Platform-agnostic implementation of the audio processing module in `C++`, testing in a simple non-real-time command-line-interface (CLI) program.
-- S3. Integration of the module in real-time audio processing applications coded in `C++`.
+- S2. Platform-agnostic implementation of the audio processing module in either `C` or `C++`, testing in a simple non-real-time command-line-interface (CLI) program.
+- S3. Integration of the module in real-time audio processing applications coded in either `C` or `C++`.
 
-The main objective here is to work on real-time audio processing algorithms in `C++`. Therefore, other parts of the code (command line or graphical interface, plugging to the system's audio render loop etc.) is provided. However, it is possible to modify everything at will.
+The main objective here is to work on real-time audio processing algorithms in `C` and/or `C++`. Therefore, other parts of the code (command line or graphical interface, plugging to the system's audio render loop etc.) are provided (coded in `C++` for the most part). However, it is possible to modify everything at will.
 
+For steps S2 and S3, you can choose the language you want to work with: `C` or `C++`. I personally recommend to work on this project in `C++`, but you can work in `C` if you are not familiar with the `C++` language or if you want to specifically work on your `C` skills.
 
 ## ☝️  What you'll need
 
 ### 📚  Prerequisites
 
-- Baisc knowledge of **_Digital Signal Processing theory_** (digital signal representation, Z transform, difference equation, digital filtering etc.).
-- Basic knowledge of **_Python and C/C++_** with their standard tools.
+- Baisc knowledge of **_Digital Signal Processing theory_** (digital signal representation, Z-transform, difference equation, digital filtering etc.).
+- Basic knowledge of **_Python_** plus **_C_** and/or **_C++_** with their standard tools.
 - The last step of the project is based on the [JUCE framework](https://juce.com/). If needed, you can consult the [JUCE repository](https://github.com/juce-framework/JUCE) and the [JUCE documentation](https://juce.com/learn/tutorials) for information and help.
 
 ### 💻 📱 🎧  Hardware
@@ -53,8 +54,8 @@ The main objective here is to work on real-time audio processing algorithms in `
 ### 🧑‍💻 Softwares
 
 - For step 1, a pre-configured online environment is available on __[replit](https://replit.com)__ and only requires a web browser. If you prefer to work on your own environment, you can use __whatever Python editor you'd like__ (IDLE, Spyder, VSCode, Atom, PyCharm etc.), with __Python >=3.7, numpy and scipy__, and all the other libraries you may want to use for the implementation of your algorithm. 
-- For step 2, a pre-configured online environment is available on __[replit](https://replit.com)__ and only requires a web browser. If you prefer to work on your own environment, S2 requires either __cmake__ and __make__ or any __C++ compiler__ (__g++ or clang++__ for example), and any __code editor__. Use of a debugger -__gdb__ for example- is strongly recommended but not necessary. Feel free to use you favorite __C++ IDE__ (VSCode, Atom, Eclipse, Code::Blocks, Geany, CLion, Visual Studio, XCode, etc.).
-- Step 3 requires the [__JUCE framework__](https://juce.com), which you can get for free for personnal use. The configuration needed to build the project depends on the platform you are working on, and the platform you are building for:
+- For step 2, pre-configured online environments are available on __[replit](https://replit.com)__ and only requires a web browser. If you prefer to work on your own environment, S2 requires either __cmake__ and __make__ or any __C++ compiler__ (__g++ or clang++__ for example), and any __code editor__. Use of a debugger -__gdb__ for example- is strongly recommended but not necessary. Feel free to use you favorite __C/C++ IDE__ (VSCode, Atom, Eclipse, Code::Blocks, Geany, CLion, Visual Studio, XCode, etc.).
+- Step 3 requires the [__JUCE framework__](https://juce.com), which you can get for free for personnal use. The project has beend tested and validated with JUCE 7.0.5, it is recommended to use the exact same version. The configuration needed to build the project depends on the platform you are working on, and the platform you are building for:
   - Working on Windows, you'll be able to build for
     - Windows with [__Visual Studio 2015, 2017, 2019 or 2022__](https://visualstudio.microsoft.com) (with the __Desktop Development with C++__ module),
     - Android with [__Android Studio__](https://developer.android.com/studio/).
@@ -118,22 +119,22 @@ Check the results, and proceed to the next step when you are satisfied.
 Please refer to the [README.md file](S1-Python_AudioProcessor/README.md) file of the [`S1-Python_AudioProcessor`](S1-Python_AudioProcessor) directory.  
 
 
-### 👨‍💻  S2. C++ Implementation: [`S2-CPP_OfflineAudioProcessor`](S2-CPP_OfflineAudioProcessor)
+### 👨‍💻  S2. C or C++ Implementation: [`S2-C_OfflineAudioProcessor`](S2-C_OfflineAudioProcessor) or [`S2-CPP_OfflineAudioProcessor`](S2-CPP_OfflineAudioProcessor)
 
-During this second step, your goal is to translate the final algorithm of the previous step in platform-agnostic, real-time-compatible C++ code. In order to simplify this task, you will do this in the most simple context: a CLI program called `OfflineAudioProcessor`.  
+During this second step, your goal is to translate the final algorithm of the previous step in platform-agnostic, real-time-compatible C/C++ code. In order to simplify this task, you will do this in the most simple context: a CLI program called `OfflineAudioProcessor`.  
 
-Please refer to the [README.md file](S2-CPP_OfflineAudioProcessor/README.md) inside the [`S2-CPP_OfflineAudioProcessor`](S2-CPP_OfflineAudioProcessor) directory for detailed explanation.
+- `C` version: please refer to the [README.md file](S2-C_OfflineAudioProcessor/README.md) inside the [`S2-C_OfflineAudioProcessor`](S2-C_OfflineAudioProcessor) directory for detailed explanation.
+- `C++` version: please refer to the [README.md file](S2-CPP_OfflineAudioProcessor/README.md) inside the [`S2-CPP_OfflineAudioProcessor`](S2-CPP_OfflineAudioProcessor) directory for detailed explanation.
 
-### 🧑‍🎤  S3. Integration inside a real-time application: [`S3-JUCE_AudioLoop`](S3-JUCE_AudioLoop) or [`S3-JUCE_AudioProcessor`](S3-JUCE_AudioProcessor)
+### 🧑‍🎤  S3. Integration inside a real-time application: `AudioLoop` and `AudioProcessor`
 
-The final step aims at integrate the algorithm in a real-time application. More precisely, you will directly integrate the `AudioProcessor` class, the one you modified in the previous step, in one of the simple applications provided: `AudioLoop` and `AudioProcessor`.
+The final step aims at integrate the algorithm in a real-time application. More precisely, you will directly integrate the `AudioProcessor` class/struct, the one you modified in the previous step, in one of the simple applications provided: `AudioLoop` and `AudioProcessor`.
 
-`AudioLoop` is a simple example of audio real-time application with audio input and output: it captures the audio input of the device, applies a real-time process on the data, and sends the modified audio data to the audio output. This application is developped using the [JUCE framework](https://juce.com), and can be built for macOS, Linux, Windows, iOS or Android.    
-This project requires a microphone, either integrated in your computer or smartphone, or an external microphone with adaquate connection for your system (analog plug, USB microphone or USB audio interface).    
-Also, using headphones is strongly recommended to work on this project to avoid larsen effects (audio feedback loop).   
-The JUCE project is located inside the directory [`S3-JUCE_AudioLoop`](S3-JUCE_AudioLoop).
+`AudioLoop` is a simple example of audio real-time application with audio input and output: it captures the audio input of the device, applies a real-time process on the data, and sends the modified audio data to the audio output. This application is developped using the [JUCE framework](https://juce.com), and can be built for macOS, Linux, Windows, iOS or Android.  
+This project requires a microphone, either integrated in your computer or smartphone, or an external microphone with adaquate connection for your system (analog plug, USB microphone or USB audio interface).  
+Also, using headphones is strongly recommended to work on this project to avoid larsen effects (audio feedback loop).
 
-`AudioProcessor` is a simple example of audio real-time application with audio output only: it reads an audio file, applies a real-time process on the data, and sends the modified audio data to the audio output. This application is developped using the [JUCE framework](https://juce.com), and can be built for macOS, Linux or Windows.    
-The JUCE project is located inside the directory [`S3-JUCE_AudioProcessor`](S3-JUCE_AudioProcessor).
+`AudioProcessor` is a simple example of audio real-time application with audio output only: it reads an audio file, applies a real-time process on the data, and sends the modified audio data to the audio output. This application is developped using the [JUCE framework](https://juce.com), and can be built for macOS, Linux or Windows.
 
-Please refer to the [S3-JUCE_AudioLoop/README.md file](S3-JUCE_AudioLoop/README.md) or [S3-JUCE_AudioProcessor/README.md file](S3-JUCE_AudioProcessor/README.md) for detailed explanation.
+- If you completed S2 with the `C` version, please refer to [S3-C_JUCE_AudioLoop/README.md file](S3-C_JUCE_AudioLoop/README.md) or [S3-C_JUCE_AudioProcessor/README.md file](S3-C_JUCE_AudioProcessor/README.md) for detailed explanation.
+- If you completed S2 with the `C++` version, please refer to the [S3-CPP_JUCE_AudioLoop/README.md file](S3-CPP_JUCE_AudioLoop/README.md) or [S3-CPP_JUCE_AudioProcessor/README.md file](S3-CPP_JUCE_AudioProcessor/README.md) for detailed explanation.
