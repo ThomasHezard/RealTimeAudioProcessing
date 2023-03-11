@@ -1,3 +1,14 @@
+### Version 3.0 ###
+* Date : 2023-03-11
+* Author : Thomas Hézard - thomas.hezard@thz.fr
+
+* Change log :
+    - Add C version for step 2 and step 3 with replit repos
+    - Update Step 3 for JUCE 7.0.5
+    
+*****
+
+
 ### Version 2.1 ###
 * Date : 2022-02-26
 * Author : Thomas Hézard - thomas.hezard@thz.fr
