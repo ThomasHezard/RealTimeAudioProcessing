@@ -52,16 +52,19 @@ Once your modifications are completed and functional, you can design and impleme
 
 ## ⚙️  How to compile and run
 
-### Compile and run on replit
+### Compile and run on Github Codespace
 
-This project can be compiled and run in a pre-configured environment on replit: [Run on replit](https://replit.com/@ThomasHezard/RealTimeAudioProcessing-Step2OfflineCPP).  
-Clicking the `Run` button will compile the project, and run it to read the audio file `Marimba.wav`, process its audio data, and write the resulting audio data in the audio file `output.wav`.  
+This project can be compiled and run in a pre-configured environment on Github Codespace:
+1. [Fork this repository](https://github.com/ThomasHezard/RealTimeAudioProcessing/fork) to your own Github account,
+2. On your fork's page, click the green **Code** button → **Codespaces** tab → **Create codespace**.
 
-### Compile and run on your computer from the command line
+Once in the Codespace, open a terminal and follow the instructions below to compile and run the project.
+
+### Compile and run from the command line (Github Codespace or local)
 
 #### Compile out-of-source with `CMake` and `make`
 
-Type the following commands from project's root:
+Type the following commands from directory `S2-CPP_OfflineAudioProcessor`:
 ```
 mkdir build
 cd build
@@ -69,16 +72,16 @@ cmake ..
 make
 ```
 
-#### Compile out-of-source with `g++` or `clang++` (or any other C++ compiler)
+#### Compile out-of-source with `g++` or `clang++` (or any other C/C++ compiler)
 
-Type the following commands from project's root (replace `gcc++`` with your compiler if needed)
+Type the following commands from directory `S2-CPP_OfflineAudioProcessor` (replace `g++` with your compiler if needed)
 ```
 mkdir build
 cd build
 g++ -std=c++11 ../sources/main.cpp ../sources/audio_processor.cpp -o OfflineAudioProcessor
 ```
 
-### Compile and run on your computer from a Cmake or C++ IDE
+### Compile and run from a Cmake or C++ IDE
 
 You can also open this directory from your favourite Cmake or C++ IDE and work form there.
 

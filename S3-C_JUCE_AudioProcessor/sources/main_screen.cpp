@@ -12,8 +12,6 @@
 
 MainScreen::MainScreen()
 {    
-    openGLContext.attachTo (*getTopLevelComponent());
-    
     addAndMakeVisible (&openButton_);
     openButton_.setButtonText ("Open...");
     openButton_.onClick = [this] { openButtonClicked(); };
@@ -81,7 +79,6 @@ MainScreen::MainScreen()
 
 MainScreen::~MainScreen()
 {
-    openGLContext.detach();
 }
 
 void MainScreen::paint (juce::Graphics& g)
@@ -116,14 +113,15 @@ void MainScreen::setStopButtonEnabled(bool enabled)
 
 void MainScreen::openButtonClicked()
 {
-    juce::FileChooser chooser ("Select a mp3 or wav file to play...",
-                               {},
-                               "*.mp3;*.wav");
-    
-    if (chooser.browseForFileToOpen())
+    fileChooser_ = std::make_unique<juce::FileChooser> ("Select a mp3 or wav file to play...",
+                                                        juce::File{},
+                                                        "*.mp3;*.wav");
+
+    fileChooser_->launchAsync (juce::FileBrowserComponent::openMode | juce::FileBrowserComponent::canSelectFiles,
+                               [this] (const juce::FileChooser& fc)
     {
-        auto file = chooser.getResult();
-        if (onAudioFileChoosed != nullptr)
+        auto file = fc.getResult();
+        if (file != juce::File{} && onAudioFileChoosed != nullptr)
             onAudioFileChoosed(file);
-    }
+    });
 }

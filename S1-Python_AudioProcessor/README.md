@@ -21,38 +21,45 @@ This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareA
 
 ## 🎯  Objectives
 
-This folder contains a self-sufficient Python script `audio_processor.py`. The present version of the code does nothing but copying audio data from an input audio file into an output audio file.  
+This directory contains a self-sufficient Python script `audio_processor.py`, and a notebook version of the same script `audio_processor.ipynb`. The present version of the code does nothing but copying audio data from an input audio file into an output audio file.
 
-Your goal is to implement modify this script to replace the data copy with the audio processing algorithm you chose. All you have to do is to __replace [line 35](audio_processor.py#L35) with your code__.
+Your goal is to implement modify this script to replace the data copy with the audio processing algorithm you chose. All you have to do is to __replace [line 42](audio_processor.py#L35) with your code__.
 
 --- 
 
 ## ⚙️  How to run
 
-### Run it on replit
+### Run on Google Colab (recommended)
 
-This project can be run in a pre-configured environment on replit: [Run on replit](https://replit.com/@ThomasHezard/RealTimeAudioProcessing-Step1Python).  
-Clicking the `Run` button will run the script `audio_processor.py`, which reads the audio file `Marimba.wav`, processes its audio data, and writes the resulting audio data in the audio file `output.wav`.  
-If the `Run` button does not work, go to the console and run 
+The notebook can be run on Google Colab: [Run on Google Colab](https://colab.research.google.com/github/ThomasHezard/RealTimeAudioProcessing/blob/google-colab/S1-Python_AudioProcessor/audio_processor.ipynb).  
+
+### Run on Github Codespace
+
+This project can be run in a pre-configured environment on Github Codespace:
+1. [Fork this repository](https://github.com/ThomasHezard/RealTimeAudioProcessing/fork) to your own Github account,
+2. On your fork's page, click the green **Code** button → **Codespaces** tab → **Create codespace**.
+
+Once in the Codespace, open a terminal and follow the instructions below to run the Python script.
+
+### Run the script
+
+This project has been written for `Python >= 3.7`, necessary packages are detailed in `requirements.txt`.
+After having installed and setup `Python`, you can install all necessary packages and run the script with `uv`:
 ```bash
-python audio_processor.py
+uv run audio_processor.py
 ```
-
-### Run it on your computer
-
-This project has been written for `Python >= 3.7`, necessary packages are detailed in `requirements.txt`.  
-After having installed and setup `Python`, you can install all necessary packages with `pip`: 
+or install the packages manually with `pip`:
 ```bash
 pip install -r requirements.txt
 ```
-or `conda`: 
+or `conda`:
 ```bash
 conda install --file requirements.txt
 ```
 
-Once your environement is ready, you can execute the Python script with the command
+Once your environment is ready, you can execute the Python script with the command
 ```bash
 python audio_processor.py
 ```
 
-Alternatively, you can open this directory in your favourite Python IDE and work form there.
+Alternatively, you can open this directory in your favourite Python IDE and work from there.

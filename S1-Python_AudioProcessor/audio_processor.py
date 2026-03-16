@@ -1,13 +1,20 @@
+# /// script
+# requires-python = ">=3.7"
+# dependencies = ["numpy", "scipy"]
+# ///
+
+import os
 import numpy as np
 import scipy.io.wavfile as wavfile
 
+_dir = os.path.dirname(os.path.abspath(__file__))
 
 # Parameters
 # **********
 
-# This must be an audio file readable by scipy.io.wavfile.read() function
-input_file = 'Marimba.wav'
-output_file = 'output.wav'
+# Input audio file must be readable by scipy.io.wavfile.read() function
+input_file = os.path.join(_dir, 'Marimba.wav')
+output_file = os.path.join(_dir, 'output.wav')
 
 
 # Read input file

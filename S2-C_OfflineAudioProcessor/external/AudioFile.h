@@ -31,6 +31,7 @@
 #include <unordered_map>
 #include <iterator>
 #include <algorithm>
+#include <cstdint>
 
 //=============================================================
 /** The different types of audio file, plus some other types to 

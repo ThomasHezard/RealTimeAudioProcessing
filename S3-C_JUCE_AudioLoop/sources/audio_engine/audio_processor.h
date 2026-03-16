@@ -11,6 +11,8 @@ extern "C" {
 
 typedef struct AudioProcessor {
 
+    int dummy; // C-compilation tweak, remove if not needed
+
     // persistent data members
     // ex: float        sampleRate;
     //

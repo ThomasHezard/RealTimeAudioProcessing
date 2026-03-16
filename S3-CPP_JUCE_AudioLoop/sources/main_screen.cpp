@@ -12,8 +12,6 @@
 
 MainScreen::MainScreen()
 {    
-    openGLContext.attachTo (*getTopLevelComponent());
-    
     addAndMakeVisible(&sliderA_);
     sliderA_.setRange({0, 1}, 0.001);
     sliderA_.setValue(0.5);
@@ -55,7 +53,6 @@ MainScreen::MainScreen()
 
 MainScreen::~MainScreen()
 {
-    openGLContext.detach();
 }
 
 void MainScreen::paint (juce::Graphics& g)

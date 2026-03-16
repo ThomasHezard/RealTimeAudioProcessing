@@ -44,7 +44,7 @@ private:
     juce::Slider sliderB_;
     juce::Label labelB_;
         
-    juce::OpenGLContext openGLContext;
-    
+    std::unique_ptr<juce::FileChooser> fileChooser_;
+
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainScreen)
 };

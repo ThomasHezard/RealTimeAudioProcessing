@@ -32,7 +32,5 @@ private:
     juce::Slider sliderB_;
     juce::Label labelB_;
         
-    juce::OpenGLContext openGLContext;
-    
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainScreen)
 };

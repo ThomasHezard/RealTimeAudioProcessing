@@ -1,3 +1,14 @@
+### Version 4.0 ###
+* Date : 2026-03-15
+* Author : Thomas Hézard - thomas.hezard@thz.fr
+
+* Change log :
+    - Replace replit with Google Colab and Github Codespace.
+    - Update Step 3 for JUCE 8.0.12
+    
+*****
+
+
 ### Version 3.0 ###
 * Date : 2023-03-11
 * Author : Thomas Hézard - thomas.hezard@thz.fr

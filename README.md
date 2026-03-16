@@ -53,22 +53,28 @@ For steps S2 and S3, you can choose the language you want to work with: `C` or `
 
 ### 🧑‍💻 Softwares
 
-- For step 1, a pre-configured online environment is available on __[replit](https://replit.com)__ and only requires a web browser. If you prefer to work on your own environment, you can use __whatever Python editor you'd like__ (IDLE, Spyder, VSCode, Atom, PyCharm etc.), with __Python >=3.7, numpy and scipy__, and all the other libraries you may want to use for the implementation of your algorithm. 
-- For step 2, pre-configured online environments are available on __[replit](https://replit.com)__ and only requires a web browser. If you prefer to work on your own environment, S2 requires either __cmake__ and __make__ or any __C++ compiler__ (__g++ or clang++__ for example), and any __code editor__. Use of a debugger -__gdb__ for example- is strongly recommended but not necessary. Feel free to use you favorite __C/C++ IDE__ (VSCode, Atom, Eclipse, Code::Blocks, Geany, CLion, Visual Studio, XCode, etc.).
-- Step 3 requires the [__JUCE framework__](https://juce.com), which you can get for free for personnal use. The project has beend tested and validated with JUCE 7.0.5, it is recommended to use the exact same version. The configuration needed to build the project depends on the platform you are working on, and the platform you are building for:
+- Step 1 can be done on [Google Colab](https://colab.research.google.com), which only requires a web browser and a Google account. Alternatively, you can work on Github Codespace, which only requires a web browser and a [Github](https://github.com) account. If you prefer to work on your own environment, you can use __whatever Python editor you'd like__ (IDLE, Spyder, VSCode, Atom, PyCharm etc.), with __Python >=3.7, numpy and scipy__, and all the other libraries you may want to use for the implementation of your algorithm. 
+- Step 2 can be done on Github Codespace, which only requires a web browser and a [Github](https://github.com) account. If you prefer to work on your own environment, S2 requires either __cmake__ and __make__ or any __C++ compiler__ (__g++ or clang++__ for example), and any __code editor__. Use of a debugger -__gdb__ for example- is strongly recommended but not necessary. Feel free to use you favorite __C/C++ IDE__ (VSCode, Atom, Eclipse, Code::Blocks, Geany, CLion, Visual Studio, XCode, etc.).
+- Step 3 requires the [__JUCE framework__](https://juce.com), which you can get for free for personnal use. The project has beend tested and validated with JUCE 8.0.12, it is recommended to use the exact same version. The configuration needed to build the project depends on the platform you are working on, and the platform you are building for:
   - Working on Windows, you'll be able to build for
-    - Windows with [__Visual Studio 2015, 2017, 2019 or 2022__](https://visualstudio.microsoft.com) (with the __Desktop Development with C++__ module),
+    - Windows with [__Visual Studio 2019, 2022 or 2026__](https://visualstudio.microsoft.com) (with the __Desktop Development with C++__ module),
     - Android with [__Android Studio__](https://developer.android.com/studio/).
-  - Working on macOS (Intel or ARM), you'll be able to build for
+  - Working on macOS, you'll be able to build for
     - macOS and iOS with [__Xcode__](https://developer.apple.com/xcode/) and an __[Apple Developer account](https://developer.apple.com/account/)__,
     - Android with [__Android Studio__](https://developer.android.com/studio/).
-  - Working on Linux, you'll be able to build for 
-    - Linux with [__make__](https://www.gnu.org/software/make/) or [__Code::Blocks__](https://www.codeblocks.org),
-    - Android with [__Android Studio__](https://developer.android.com/studio/) (not fully tested).  
-  
-    On Linux, the following installation step is needed to run the Projucer and to build the project (tested on Ubuntu 20.04, Debian 10 and Debian 11, X86_64 architecture)
+  - Working on Linux, you'll be able to build for (not fully tested)
+    - Linux with [__make__](https://www.gnu.org/software/make/) or [__cmake__](https://cmake.org),
+    - Android with [__Android Studio__](https://developer.android.com/studio/).
+
+    On Linux, the following installation step is needed to run the Projucer and to build the project:
       ```bash
-      sudo apt install make g++ libfreetype6-dev libasound2-dev libcurl4-openssl-dev libwebkit2gtk-4.0-dev
+      sudo apt install build-essential pkg-config \
+          libasound2-dev libjack-jackd2-dev ladspa-sdk \
+          libcurl4-openssl-dev libfreetype-dev libfontconfig1-dev \
+          libx11-dev libxcomposite-dev libxcursor-dev libxext-dev \
+          libxinerama-dev libxrandr-dev libxrender-dev \
+          libwebkit2gtk-4.1-dev libglu1-mesa-dev libgl1-mesa-dev \
+          libxt-dev freeglut3 mesa-common-dev
       ```
 
 
