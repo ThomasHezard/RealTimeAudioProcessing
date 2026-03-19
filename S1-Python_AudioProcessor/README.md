@@ -31,7 +31,7 @@ Your goal is to implement modify this script to replace the data copy with the a
 
 ### Run on Google Colab (recommended)
 
-The notebook can be run on Google Colab: [Run on Google Colab](https://colab.research.google.com/github/ThomasHezard/RealTimeAudioProcessing/blob/google-colab/S1-Python_AudioProcessor/audio_processor.ipynb).  
+The notebook can be run on Google Colab: [Run on Google Colab](https://colab.research.google.com/github/ThomasHezard/RealTimeAudioProcessing/blob/main/S1-Python_AudioProcessor/audio_processor.ipynb).  
 
 ### Run on Github Codespace
 
